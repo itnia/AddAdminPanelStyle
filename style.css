@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(90deg, #35aeb9, #4ca3ce, #489bc1);
+}
+
+.section-window {
+  box-shadow: 0 0 6px -2px black;
+  position: relative;
+}
+
+.x-table {
+  width: 100%;
+  margin-bottom: 20px;
+  /* border: 5px solid #fff; */
+  /* border-top: 5px solid #fff; */
+  /* border-bottom: 3px solid #fff; */
+  border-collapse: collapse;
+  /* font-size: 1.25rem; */
+  background: #fff !important;
+  background-color: white;
+}
+.x-table th {
+  font-weight: bold;
+  padding: 7px;
+  /* background: #ffd300; */
+  border: none;
+  text-align: left;
+  /* font-size: 15px; */
+  /* border-top: 3px solid #fff; */
+  /* border-bottom: 3px solid #ffd300; */
+  border-bottom: 2px #eef2f4 solid;
+}
+.x-table td {
+  padding: 7px;
+  border: none;
+  /* border-top: 3px solid #fff; */
+  border-bottom: 3px solid #fff;
+  /* font-size: 15px; */
+
+  border-bottom: 1px #eef2f4 solid;
+  /* border-right: 1px #eef2f4 solid; */
+}
+
+/* ------------------ */
+.x-table__cell-checkbox {
+  width: 30px;
+}
+
+.x-table__cell-menu {
+  width: 30px;
+}
+
+.x-table__icon-item-menu {
+  cursor: pointer;
+}
+.x-table__icon-item-menu:hover {
+  color: red;
+}
+
+/* --- */
+.x-panel-window {
+  position: sticky;
+  top: 1rem;
+  padding: 0.75rem 0.5rem;
+  background-color: white;
+  margin-bottom: 2px;
+  box-shadow: 0 0 4px -2px black;
+}
+
+.x-panel-window.sticky {
+  box-shadow: 0 0 4px 0px black;
+}
