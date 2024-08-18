@@ -17,7 +17,8 @@
         <div class="section-window">
             <div class="x-panel-window">
                 <select name="" id="">
-                    <option value="">Выберите действие</option>
+                    <option value="" disabled selected>Выберите действие</option>
+                    <option value="">Назначить отвественного</option>
                 </select>
                 <button>Применить</button>
             </div>
@@ -643,6 +644,13 @@
         </div>
     </main>
 
+    <div class="x-menu-popup">
+        <div>test</div>
+        <div>test</div>
+        <div>test</div>
+        <div>test</div>
+    </div>
+
     <script>
         const tables = document.querySelectorAll('.x-table').forEach((table) => {
             // отделять логику обновления событий
@@ -675,6 +683,24 @@
                 stickyElement.classList.remove('sticky');
             }
         }, { rootMargin: '-1px 0px 0px 0px', threshold: [1] }).observe(sentinel);
+
+        const menuPopup = document.querySelector('.x-menu-popup');
+        document.querySelectorAll('tbody .x-table__icon-item-menu').forEach((element) => {
+            element.addEventListener('click', (event) => {
+                const rect = element.getBoundingClientRect();
+                const rectBody = document.body.getBoundingClientRect();
+                menuPopup.style.top = rect.top - 10 + document.documentElement.scrollTop + 'px';
+                menuPopup.style.left = rect.left + rect.width + 10 + document.documentElement.scrollLeft + 'px';
+                menuPopup.classList.toggle('is-active');
+            })
+        })
+        document.addEventListener('mouseup', function (e) {
+            var container = document.querySelector('.x-menu-popup');
+
+            if (container.classList.contains('is-active') && !container.contains(e.target)) {
+                menuPopup.classList.remove('is-active');
+            }
+        });
     </script>
 </body>
 
